@@ -47,7 +47,6 @@
                 <option value="f">°F</option>
             </select>
             <span>→</span>
-            <span id="hasil">= RESULT</span>
             <select name="" id="opsi2">
                 <option value="c">°C</option>
                 <option value="r">°R</option>
@@ -56,7 +55,7 @@
             </select>
         </div>
 
-        <h2 id="hasil2"></h2>
+        <h2 id="hasil"></h2>
     </div>
 
     <script>
@@ -64,7 +63,6 @@
         const opsi1 = document.getElementById("opsi1");
         const hasil = document.getElementById("hasil");
         const opsi2 = document.getElementById("opsi2");
-        const hasil2 = document.getElementById("hasil2");
 
         function hitungHasil() {
 
@@ -72,56 +70,40 @@
 
             // Celcius
             if (opsi1.value === "c" && opsi2.value === "c") {
-                hasil.innerHTML = nilaiBesaran;
-                hasil2.innerHTML = `${hasil.innerHTML}°C`;
+                hasil.innerHTML = `${nilaiBesaran}°C`;
             } else if (opsi1.value === "c" && opsi2.value === "r") {
-                hasil.innerHTML = (4 / 5) * nilaiBesaran;
-                hasil2.innerHTML = `${hasil.innerHTML}°R`;
+                hasil.innerHTML = `${(4 / 5) * nilaiBesaran}°R`;
             } else if (opsi1.value === "c" && opsi2.value === "k") {
-                hasil.innerHTML = nilaiBesaran + 273;
-                hasil2.innerHTML = `${hasil.innerHTML}K`;
+                hasil.innerHTML = `${nilaiBesaran + 273}K`;
             } else if (opsi1.value === "c" && opsi2.value === "f") {
-                hasil.innerHTML = ((9 / 5) * nilaiBesaran) + 32;
-                hasil2.innerHTML = `${hasil.innerHTML}°F`;
+                hasil.innerHTML = `${((9 / 5) * nilaiBesaran) + 32}°F`;
             } // Reamur 
             else if (opsi1.value === "r" && opsi2.value === "c") {
-                hasil.innerHTML = (5 / 4) * nilaiBesaran;
-                hasil2.innerHTML = `${hasil.innerHTML}°C`;
+                hasil.innerHTML = `${(5 / 4) * nilaiBesaran}°C`;
             } else if (opsi1.value === "r" && opsi2.value === "r") {
-                hasil.innerHTML = nilaiBesaran;
-                hasil2.innerHTML = `${hasil.innerHTML}°R`;
+                hasil.innerHTML = `${nilaiBesaran}°R`;
             } else if (opsi1.value === "r" && opsi2.value === "k") {
-                hasil.innerHTML = ((5 / 4) * nilaiBesaran) + 273;
-                hasil2.innerHTML = `${hasil.innerHTML}K`;
+                hasil.innerHTML = `${((5 / 4) * nilaiBesaran) + 273}K`;
             } else if (opsi1.value === "r" && opsi2.value === "f") {
-                hasil.innerHTML = ((9 / 4) * nilaiBesaran) + 32;
-                hasil2.innerHTML = `${hasil.innerHTML}°F`;
+                hasil.innerHTML = `${((9 / 4) * nilaiBesaran) + 32}°F`;
             } // Kelvin 
             else if (opsi1.value === "k" && opsi2.value === "c") {
-                hasil.innerHTML = nilaiBesaran - 273;
-                hasil2.innerHTML = `${hasil.innerHTML}°C`;
+                hasil.innerHTML = `${nilaiBesaran - 273}°C`;
             } else if (opsi1.value === "k" && opsi2.value === "r") {
-                hasil2.innerHTML = `${hasil.innerHTML}°R`;
-                hasil.innerHTML = (4 / 5) * (nilaiBesaran - 273);
+                hasil.innerHTML = `${(4 / 5) * (nilaiBesaran - 273)}°R`;
             } else if (opsi1.value === "k" && opsi2.value === "k") {
-                hasil.innerHTML = nilaiBesaran;
-                hasil2.innerHTML = `${hasil.innerHTML}K`;
+                hasil.innerHTML = `${nilaiBesaran}K`;
             } else if (opsi1.value === "k" && opsi2.value === "f") {
-                hasil.innerHTML = (nilaiBesaran - 273, 15) * (9 / 5) + 32;
-                hasil2.innerHTML = `${hasil.innerHTML}°F`;
+                hasil.innerHTML = `${(nilaiBesaran - 273, 15) * (9 / 5) + 32}°F`;
             } // Fahrenheit
             else if (opsi1.value === "f" && opsi2.value === "c") {
-                hasil.innerHTML = (5 / 9) * (nilaiBesaran - 32);
-                hasil2.innerHTML = `${hasil.innerHTML}°C`;
+                hasil.innerHTML = `${(5 / 9) * (nilaiBesaran - 32)}°C`;
             } else if (opsi1.value === "f" && opsi2.value === "r") {
-                hasil.innerHTML = (4 / 9) * (nilaiBesaran - 32);
-                hasil2.innerHTML = `${hasil.innerHTML}°R`;
+                hasil.innerHTML = `${(4 / 9) * (nilaiBesaran - 32)}°R`;
             } else if (opsi1.value === "f" && opsi2.value === "k") {
-                hasil.innerHTML = (nilaiBesaran - 32) * (5 / 9) + 273.15;
-                hasil2.innerHTML = `${hasil.innerHTML}K`;
+                hasil.innerHTML = `${(nilaiBesaran - 32) * (5 / 9) + 273.15}K`;
             } else if (opsi1.value === "f" && opsi2.value === "f") {
-                hasil.innerHTML = nilaiBesaran;
-                hasil2.innerHTML = `${hasil.innerHTML}°F`;
+                hasil.innerHTML = `${nilaiBesaran}°F`;
             }
 
 
